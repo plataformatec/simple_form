@@ -29,15 +29,17 @@ Run the generator:
 rails generate simple_form:install
 ```
 
-### Bootstrap
+### Bootstrap 5
 
-**Simple Form** can be easily integrated to the [Bootstrap](http://getbootstrap.com/).
-To do that you have to use the `bootstrap` option in the install generator, like this:
+**Simple Form** can be easily integrated with [Bootstrap 5](http://getbootstrap.com/).
+Use the `bootstrap` option in the install generator, like this:
 
 ```console
 rails generate simple_form:install --bootstrap
 ```
 
+This will add an initializer that configures **Simple Form** wrappers for
+Bootstrap 5's [form controls](https://getbootstrap.com/docs/5.0/forms/overview/).
 You have to be sure that you added a copy of the [Bootstrap](http://getbootstrap.com/)
 assets on your application.
 
