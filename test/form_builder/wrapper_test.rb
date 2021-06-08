@@ -375,4 +375,11 @@ class WrapperTest < ActionView::TestCase
       assert_no_select 'p.omg_hint'
     end
   end
+
+  test 'inline wrapper has an error class' do
+    swap_wrapper :default, custom_wrapper_with_error_class do
+      with_form_for @user, :name
+      assert_select 'section.custom_wrapper div.custom_error'
+    end
+  end
 end

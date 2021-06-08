@@ -67,7 +67,9 @@ module SimpleForm
       end
 
       def html_classes(input, options)
-        @defaults[:class].dup
+        css = @defaults[:class].dup
+        css << @defaults[:error_class].dup { input.has_errors? }
+        css.compact
       end
     end
   end
