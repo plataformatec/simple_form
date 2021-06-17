@@ -546,6 +546,7 @@ module SimpleForm
       return options[:as].to_sym if options[:as]
       custom_type = find_custom_type(attribute_name.to_s) and return custom_type
       return :select             if options[:collection]
+      return :rich_text_area     if defined?(ActionText::RichText) && @object.send(attribute_name).is_a?(ActionText::RichText)
 
       input_type = column.try(:type)
       case input_type

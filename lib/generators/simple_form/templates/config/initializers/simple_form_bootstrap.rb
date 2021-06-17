@@ -409,6 +409,22 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
+  config.wrappers :vertical_rich_text_area, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :minlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+    b.use :label, class: 'form-control-label'
+    b.wrapper tag: 'div', class: 'trix-frame' do |ba|
+      ba.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
+    end
+    b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
+    b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
+  end
+
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :vertical_form
@@ -416,25 +432,27 @@ SimpleForm.setup do |config|
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
   config.wrapper_mappings = {
-    boolean:       :vertical_boolean,
-    check_boxes:   :vertical_collection,
-    date:          :vertical_multi_select,
-    datetime:      :vertical_multi_select,
-    file:          :vertical_file,
-    radio_buttons: :vertical_collection,
-    range:         :vertical_range,
-    time:          :vertical_multi_select
+    boolean:        :vertical_boolean,
+    check_boxes:    :vertical_collection,
+    date:           :vertical_multi_select,
+    datetime:       :vertical_multi_select,
+    file:           :vertical_file,
+    radio_buttons:  :vertical_collection,
+    range:          :vertical_range,
+    time:           :vertical_multi_select,
+    rich_text_area: :vertical_rich_text_area
   }
 
   # enable custom form wrappers
   # config.wrapper_mappings = {
-  #   boolean:       :custom_boolean,
-  #   check_boxes:   :custom_collection,
-  #   date:          :custom_multi_select,
-  #   datetime:      :custom_multi_select,
-  #   file:          :custom_file,
-  #   radio_buttons: :custom_collection,
-  #   range:         :custom_range,
-  #   time:          :custom_multi_select
+  #   boolean:        :custom_boolean,
+  #   check_boxes:    :custom_collection,
+  #   date:           :custom_multi_select,
+  #   datetime:       :custom_multi_select,
+  #   file:           :custom_file,
+  #   radio_buttons:  :custom_collection,
+  #   range:          :custom_range,
+  #   time:           :custom_multi_select,
+  #   rich_text_area: :custom_rich_text_area
   # }
 end
