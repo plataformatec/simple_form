@@ -9,6 +9,43 @@ which we are thankful for and should make you feel right at home.
 
 INFO: This README refers to **Simple Form** 5.0. For older releases, check the related branch for your version.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Installation](#installation)
+  - [Bootstrap](#bootstrap)
+  - [Zurb Foundation 5](#zurb-foundation-5)
+  - [Country Select](#country-select)
+- [Usage](#usage)
+  - [Stripping away all wrapper divs](#stripping-away-all-wrapper-divs)
+  - [Collections](#collections)
+  - [Priority](#priority)
+  - [Associations](#associations)
+  - [Buttons](#buttons)
+  - [Wrapping Rails Form Helpers](#wrapping-rails-form-helpers)
+  - [Extra helpers](#extra-helpers)
+    - [Simple Fields For](#simple-fields-for)
+    - [Collection Radio Buttons](#collection-radio-buttons)
+    - [Collection Check Boxes](#collection-check-boxes)
+- [Available input types and defaults for each column type](#available-input-types-and-defaults-for-each-column-type)
+- [Custom inputs](#custom-inputs)
+- [Custom form builder](#custom-form-builder)
+- [I18n](#i18n)
+- [Configuration](#configuration)
+  - [The wrappers API](#the-wrappers-api)
+- [Custom Components](#custom-components)
+- [HTML 5 Notice](#html-5-notice)
+  - [Using non Active Record objects](#using-non-active-record-objects)
+- [Information](#information)
+  - [RDocs](#rdocs)
+  - [Supported Ruby / Rails versions](#supported-ruby--rails-versions)
+  - [Bug reports](#bug-reports)
+- [Maintainers](#maintainers)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 Add it to your Gemfile:
