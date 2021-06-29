@@ -40,6 +40,12 @@ class AssociationTest < ActionView::TestCase
     assert_equal 3, calls
   end
 
+  test 'builder association accepts symbols to use as scopes' do
+    simple_form_for @user do |f|
+      f.association :company, collection: :all
+    end
+  end
+
   test 'builder association marks input as required based on both association and attribute' do
     swap SimpleForm, required_by_default: false do
       with_association_for @validating_user, :company, collection: []

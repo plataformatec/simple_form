@@ -34,6 +34,7 @@ module SimpleForm
       def collection
         @collection ||= begin
           collection = options.delete(:collection) || self.class.boolean_collection
+          collection = reflection.klass.send(collection) if collection.is_a?(Symbol)
           collection.respond_to?(:call) ? collection.call : collection.to_a
         end
       end
